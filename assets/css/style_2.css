@@ -1,0 +1,102 @@
+body { /*Aplica a fonte em todo corpo da aplicação*/
+  font-family: inherit;
+}
+
+.item-1 a img { /* Tamanho da Imagem 1*/
+  width: 137px;
+  height: 35px;
+}
+
+.item-3 a img { /* Tamanho da Imagem 3*/
+  width: 105px;
+  height: 60px;
+}
+.item-2 a img{ /* Tamanho da Imagem 2*/
+  width: 150px;
+  height: 47px;
+}
+
+.item {  /* Todos os itens dentro da lista não ordenada que forma o Navbar terão as seguintes config.*/
+  display: flex;
+  margin: 0 10px;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+section{ /*Todo corpo do FAQ, execeto Header e footer*/
+  position: static;
+}
+header { /*Estilização degradê do navabar na posição relativa*/
+  animation: AnimaDegrade 10s ease alternate infinite;
+  background: linear-gradient(45deg, #6d05cd, #1c8cfc, #5dbcd2) no-repeat;
+  background-size: 300% 300%;;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  /*border: 0.5px solid;*/
+}
+
+@keyframes AnimaDegrade { /*Config. da animação degradê que será inicializada no Header*/
+ from {
+  background-position: 0% 50%;
+ }
+ to{
+  background-position: 100% 50%;
+ }
+}
+
+li { /*Alinhamento em blocos de cada item da lista não ordenada*/
+  display: inline-block;
+  list-style-type: none;
+}
+
+.Texto2 { /*Configuração de navabar degradê na versão mobile*/
+  background: linear-gradient(-45deg, #6d05cd, #1c8cfc, #5dbcd2) no-repeat;
+}
+
+@media only screen and (min-width: 769px) { /*Configuração de responsividade mobile*/
+  .Texto2 { /*Os items que possuirem essa classe irão desaparecer quando ajustado para 769px*/
+    display: none !important;
+  }
+  .item-1{ /*Os items que possuirem essa classe irão desaparecer quando ajustado para 769px*/
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) { /*Configuração de responsividade mobile*/
+  .Texto1 { /*Os items que possuirem essa classe irão desaparecer quando ajustado para 768px*/
+    display: none !important;
+  }
+  .item { /*Os items que possuirem essa classe irão ter as seguintes caracteristicas*/
+    display: flex;
+    margin: 10px 10px;
+    align-items: center;
+    text-align: justify;
+    justify-content: space-around;
+  }
+  header{ /*Os items que possuirem essa classe irão ter fundo branco*/
+    background: white;
+  }
+  h1{ /*Os items que possuirem essa classe irão ter cor branca*/
+    color: white;
+  }
+  .item-2{ /*Os items que possuirem essa classe irão desaparecer quando ajustado para 768px*/
+    display: none;
+  }
+}
+
+::-webkit-scrollbar { /* Tamanho do scrollbar (Barra de rolagem da pag)*/
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb { /* Cor e borda do scrollbar (Barra de rolagem da pag)*/
+  border-radius: 10px;
+  background: #969696;
+}
+
+::-webkit-scrollbar-thumb:hover { /* Animação ao passar o mouse em cima do scrollbar (Barra de rolagem da pag)*/
+  background: #646464;
+}
+
